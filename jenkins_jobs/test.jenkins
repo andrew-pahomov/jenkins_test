@@ -1,7 +1,25 @@
 #!groovy
+// Check ub1 properties
+properties([disableConcurrentBuilds()])
 
-    node {
+pipeline {
+    agent {
+        label 'master'
+    }
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+        timestamps()
+    }
+    stages {
         stage("First step") {
+            steps {
                 sh 'hostname'
+            }
+        }
+        stage("Second step") {
+            steps {
+                sh 'uptime'
+            }
         }
     }
+}
