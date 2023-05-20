@@ -1,6 +1,6 @@
 #!groovy
 
-    stages {
+    mode {
         stage("First step") {
             steps {
                 sh 'hostname'
