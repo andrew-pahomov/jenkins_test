@@ -2,8 +2,6 @@
 
     node {
         stage("First step") {
-            steps {
                 sh 'hostname'
-            }
         }
     }
