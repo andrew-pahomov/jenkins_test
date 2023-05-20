@@ -1,0 +1,15 @@
+#!groovy
+
+pipeline {
+    agent {
+        label 'master'
+        }
+    }
+
+    stages {
+        stage ("First step") {
+            steps {
+            sh 'hostname'
+            }
+        }
+    }
